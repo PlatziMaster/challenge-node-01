@@ -22,7 +22,7 @@ npm run start
 
 2. Escribe tu usuario de GitHub
 3. Comprueba el screenshot en src/images
-4. Visualiza un comentario en #challege con tu reto cumplido. 
+4. Revisa Slack en el canal #challeges si cumpliste el reto. 
 
 ### Instalación
 ```

@@ -27,9 +27,7 @@ const postToSlack = async (user, photo, count) => {
       'Content-Type': 'application/json; charset=UTF-8',
     },
     body: data,
-  }).then((response) => {
-    console.log(response.size);
-  });
+  }).then((response) => response);
 };
 
 module.exports = postToSlack;

@@ -4,7 +4,6 @@ const postToSlack = require('./postToSlack');
 
 const getDataFromGithub = async (githubUser) => {
 
-  console.log('Launch Puppeteer');
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
 

@@ -12,6 +12,18 @@ Obtén la información de tu usuario de github, crea un screenshot y envía la i
 6. [webhookURL](https://github.com/PlatziMaster/challenge-node-01/issues/6)
 7. [ESLint](https://github.com/PlatziMaster/challenge-node-01/issues/7)
 
+### ¿Retos Finalizados?
+
+1. Ejecuta tu aplicación
+
+```
+npm run start
+```
+
+2. Escribe tu usuario de GitHub
+3. Comprueba el screenshot en src/images
+4. Visualiza un comentario en #challege con tu reto cumplido. 
+
 ### Instalación
 ```
 npm install

@@ -5,7 +5,7 @@ Obtén la información de tu usuario de github, crea un screenshot y envía la i
 ### Retos
 
 1. [prompt.get](https://github.com/PlatziMaster/challenge-node-01/issues/1)
-2. [githubUrl](https://github.com/PlatziMaster/challenge-node-01/issues/2)
+2. [GIT_HUB_URL](https://github.com/PlatziMaster/challenge-node-01/issues/2)
 3. [getTime](https://github.com/PlatziMaster/challenge-node-01/issues/3)
 4. [postToSlack](https://github.com/PlatziMaster/challenge-node-01/issues/4)
 5. [dotenv](https://github.com/PlatziMaster/challenge-node-01/issues/5)

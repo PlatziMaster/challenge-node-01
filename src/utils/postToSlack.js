@@ -1,6 +1,10 @@
+/* eslint-disable no-console */
 const fetch = require('node-fetch');
+const config = require('./config');
 
 const postToSlack = async (user, photo, count) => {
+  const webhookURL = `${config.HOOK()}/${config.TOKEN()}`;
+
   const data = JSON.stringify({
     'blocks': [
       {
@@ -27,3 +31,5 @@ const postToSlack = async (user, photo, count) => {
     console.log(response.size);
   });
 };
+
+module.exports = postToSlack;

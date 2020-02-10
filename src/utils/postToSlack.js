@@ -18,7 +18,7 @@ const postToSlack = async (user, photo, count) => {
       },
     ],
   });
-  await fetch(`${slackUrl}/${token}`, {
+  await fetch(`${slackUrl}${token}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',

@@ -1,0 +1,37 @@
+{
+  "name": "project-node-01",
+  "version": "1.0.0",
+  "description": "Reto Semana 2: NodeJS / GithubUser",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/",
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "puppeteer"
+  ],
+  "author": "Oscar Barajas <oscar@platzi.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.0",
+    "prompt": "^1.0.0",
+    "puppeteer": "^2.1.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-node": "^4.0.0",
+    "eslint-plugin-import": "^2.20.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PlatziMaster/challenge-node-01.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PlatziMaster/challenge-node-01/issues"
+  },
+  "homepage": "https://github.com/PlatziMaster/challenge-node-01#readme"
+}

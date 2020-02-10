@@ -9,8 +9,14 @@ prompt.get(promptAttributes, (err, result) => {
   if (err) {
     return 1;
   }
-  getDataFromGithub(result.githubUser);
 
+  const user = result.githubUser;
+
+  if (user) {
+    getDataFromGithub(user);
+  } else {
+    return 1;
+  }
 });
 
 prompt.start();

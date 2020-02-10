@@ -10,6 +10,7 @@ Obtén la información de tu usuario de github, crea un screenshot y envía la i
 4. [postToSlack](https://github.com/PlatziMaster/challenge-node-01/issues/4)
 5. [dotenv](https://github.com/PlatziMaster/challenge-node-01/issues/5)
 6. [webhookURL](https://github.com/PlatziMaster/challenge-node-01/issues/6)
+7. [ESLint](https://github.com/PlatziMaster/challenge-node-01/issues/7)
 
 ### Instalación
 ```

@@ -1,5 +1,10 @@
 const fetch = require('node-fetch');
-
+const cfg = require('../utils/configuration');
+/**
+ * @param {*} user
+ * @param {*} photo
+ * @param {*} count
+ */
 const postToSlack = async (user, photo, count) => {
   const data = JSON.stringify({
     'blocks': [
@@ -17,13 +22,15 @@ const postToSlack = async (user, photo, count) => {
       },
     ],
   });
-  await fetch(webhookURL, {
+  await fetch(`${cfg.hook}/${cfg.token}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
     },
     body: data,
   }).then((response) => {
-    console.log(response.size);
+
   });
 };
+
+exports.postToSlack = postToSlack;

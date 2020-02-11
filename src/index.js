@@ -1,8 +1,6 @@
 const prompt = require('prompt');
 const getDataFromGithub = require('./utils/getDataFromGithub');
 
-const count = 1;
-
 const promptAttributes = [{
   name: 'githubUser',
 }];

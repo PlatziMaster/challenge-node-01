@@ -6,7 +6,7 @@ const promptAttributes = [{
 }];
 
 prompt.get(promptAttributes, (err, result) => {
-  if (err) {
+  if (err || !result.githubUser) {
     return 1;
   }
   getDataFromGithub(result.githubUser);

@@ -1,10 +1,12 @@
 // const puppeteer = require('puppeteer');
+const getTime = require('./getTime');
 
 const getDataFromGithub = async (githubUser) => {
   console.log('Launch Puppeteer');
   console.log(`Tu usuario es: ${githubUser}`);
   const githubUrl = 'https://github.com/';
   console.log(`Page GitHub ${githubUrl}${githubUser}`);
+  console.log(`La fecha es: ${getTime()}`)
   // const browser = await puppeteer.launch();
   // const page = await browser.newPage();
 

@@ -1,4 +1,8 @@
 const fetch = require('node-fetch');
+const { token, hook } = require('../utils/configuration');
+
+const webhookURL = `${hook}${token}`;
+console.log(webhookURL);
 
 const postToSlack = async (user, photo, count) => {
   const data = JSON.stringify({
@@ -27,3 +31,5 @@ const postToSlack = async (user, photo, count) => {
     console.log(response.size);
   });
 };
+
+module.exports = postToSlack;

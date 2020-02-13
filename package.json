@@ -15,6 +15,9 @@
   "author": "Oscar Barajas <oscar@platzi.com>",
   "license": "MIT",
   "dependencies": {
+    "Console": "^1.1.0",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security",
     "node-fetch": "^2.6.0",
     "prompt": "^1.0.0",
     "puppeteer": "^2.1.1"

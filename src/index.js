@@ -16,8 +16,8 @@ prompt.get(prompt_attributes, async (err, result) => {
   if (user) {
     try {
       console.log('Command-line received data:');
-      console.log('  githubUser:  ${user}');  
-      console.log( await getDataFromGithub(user));
+      console.log(`  githubUser:  ${user} `);
+      await getDataFromGithub(user);
     }catch(error) {
       console.log(error);
     }

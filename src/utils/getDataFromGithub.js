@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+
 const githubUrl = 'https://github.com/';
 const getTime = require('./getTime');
 const postToSlack = require('./postToSlack');

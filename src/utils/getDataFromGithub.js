@@ -5,7 +5,6 @@ const getTime = require('./getTime');
 const postToSlack = require('./postToSlack');
 
 const getDataFromGithub = async (githubUser) => {
-  console.log('Launch Puppeteer');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 

@@ -11,10 +11,8 @@ const getDataFromGithub = async (githubUser) => {
   await page.goto(`${githubUrl}${githubUser}`);
   await page.screenshot({ path: `./src/images/${getTime()}-${githubUser}.png` });
   const githubCounter = await page.evaluate(() => document.getElementsByClassName('Counter')[0].innerText);
-  console.log(githubCounter);
-  //const githubUserPhoto = await page.evaluate(() => document.getElementsByClassName('avatar-before-user-status')[0].src);
   const githubUserPhoto = await page.evaluate(() => document.getElementsByClassName('avatar width-full')[0].src);
-  console.log(githubUserPhoto);
+  postToSlack(githubUser, githubUserPhoto, githubCounter);
   await browser.close();
 };
 module.exports = getDataFromGithub;

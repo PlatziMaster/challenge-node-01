@@ -14,7 +14,7 @@ prompt.get(promptAttributes, async (err, result) => {
   }
   if (!result.githubUser || result.githubUser.lenght <= 0) {
     return 1;
-  } 
+  }
   await github.getDataFromGithub(result.githubUser);
 });
 

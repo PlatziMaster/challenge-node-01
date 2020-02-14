@@ -1,6 +1,5 @@
 
 const fetch = require('node-fetch');
-const console = require('Console');
 const { HOOK, TOKEN } = require('../config');
 
 const postToSlack = async (user, photo, count) => {

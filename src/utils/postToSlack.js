@@ -1,18 +1,20 @@
 const fetch = require('node-fetch');
+const { HOOK, TOKEN } = require('../config');
 
 const postToSlack = async (user, photo, count) => {
+  const webhookURL = `${HOOK}${TOKEN}`;
   const data = JSON.stringify({
-    'blocks': [
+    blocks: [
       {
-        'type': 'section',
-        'text': {
-          'type': 'mrkdwn',
-          'text': `*Reto Cumplido* \n https://github.com/${user} \n Numero de repositorios: ${count.trimStart()}`,
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: `*Reto Cumplido* \n https://github.com/${user} \n Numero de repositorios: ${count.trimStart()}`,
         },
-        'accessory': {
-          'type': 'image',
-          'image_url': photo,
-          'alt_text': user,
+        accessory: {
+          type: 'image',
+          image_url: photo,
+          alt_text: user,
         },
       },
     ],
@@ -23,7 +25,13 @@ const postToSlack = async (user, photo, count) => {
       'Content-Type': 'application/json; charset=UTF-8',
     },
     body: data,
-  }).then((response) => {
-    console.log(response.size);
-  });
+  })
+    .then((response) => {
+      //console.log(response.size);
+    })
+    .catch((e) => {
+      //console.log(e.message);
+    });
 };
+
+module.exports = postToSlack;

@@ -15,6 +15,8 @@
   "author": "Oscar Barajas <oscar@platzi.com>",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "eslint-config-airbnb": "^18.0.1",
     "node-fetch": "^2.6.0",
     "prompt": "^1.0.0",
     "puppeteer": "^2.1.1"

@@ -1,17 +1,32 @@
-const prompt = require('prompt')
+const prompt = require('prompt');
+const getData = require('./utils/getDataFromGithub');
 
-const count = 1
+let user = '';
 
-const prompt_attributes = [{
-  name: 'githubUser',
-}]
+const promptAttributes = [
+  {
+    name: 'githubUser',
+  },
+];
 
-prompt.get(prompt_attributes, (err, result) => {
-  if (err) {
-    console.log(err);
-    return 1;
-  }
-  console.log('Command-line received data:');
-})
+const exectPrompt = () => {
+  prompt.get(promptAttributes, (err, result) => {
+    user = result.githubUser;
+    if (user !== '' || undefined) {
+      getData(user);
 
-prompt.start()
+      //console.log('Command-line received data:');
+    } else {
+      //console.log('Favor de ingresar tu githubUser');
+      exectPrompt();
+    }
+    if (err) {
+      //console.log(err);
+      return 1;
+    }
+  });
+
+  prompt.start();
+};
+
+exectPrompt();

@@ -1,6 +1,9 @@
 const fetch = require('node-fetch');
+const config = require('./config');
+require('dotenv');
 
 const postToSlack = async (user, photo, count) => {
+  const webhookURL = `${config.HOOK}/${config.TOKEN}`;
   const data = JSON.stringify({
     'blocks': [
       {
@@ -24,6 +27,8 @@ const postToSlack = async (user, photo, count) => {
     },
     body: data,
   }).then((response) => {
-    console.log(response.size);
+
   });
 };
+
+module.exports = postToSlack;

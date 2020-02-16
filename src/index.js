@@ -8,9 +8,8 @@ const promptAttributes = [{
   required: true,
 }];
 
+prompt.start();
 prompt.get(promptAttributes, (error, result) => {
-  if (error) return 1;
+  if (error) return error;
   getDataFromGithub(result.githubUser);
 });
-
-prompt.start();

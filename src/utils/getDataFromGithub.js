@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const getTime = require('./getTime');
+const postToSlack = require('./postToSlack');
 
 const githubUrl = 'https://github.com/';
 const pathBase = 'src/images/';
@@ -14,7 +15,10 @@ const getDataFromGithub = async (githubUser) => {
   await page.screenshot({ path: `${pathBase}${getTime()}-${githubUser}.png` });
 
   const githubCounter = await page.evaluate(() => document.getElementsByClassName('Counter')[0].innerText);
-  const githubUserPhoto = await page.evaluate(() => document.getElementsByClassName('avatar-before-user-status')[0].src);
+  const githubUserPhoto = await page.evaluate(() => document.getElementsByClassName('avatar width-full height-full')[0].src);
+
+  postToSlack(githubUser, githubUserPhoto, githubCounter);
+
   await browser.close();
 };
 

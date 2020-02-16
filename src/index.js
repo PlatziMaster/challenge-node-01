@@ -1,17 +1,16 @@
-const prompt = require('prompt')
+const prompt = require('prompt');
+const getDataFromGithub = require('./utils/getDataFromGithub');
 
-const count = 1
-
-const prompt_attributes = [{
+const promptAttributes = [{
   name: 'githubUser',
-}]
+  pattern: /^[a-zA-Z0-9_-]+$/,
+  message: 'Name must be only letters, numbers or dashes. No spaces',
+  required: true,
+}];
 
-prompt.get(prompt_attributes, (err, result) => {
-  if (err) {
-    console.log(err);
-    return 1;
-  }
-  console.log('Command-line received data:');
-})
+prompt.get(promptAttributes, (error, result) => {
+  if (error) return 1;
+  getDataFromGithub(result.githubUser);
+});
 
-prompt.start()
+prompt.start();

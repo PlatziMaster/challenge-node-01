@@ -1,6 +1,6 @@
 const prompt = require('prompt');
 const dotenv = require('dotenv');
-const github = require(./utils/getDataFromGithub.js);
+const github = require('./utils/getDataFromGithub.js');
 
 const count = 1;
 
@@ -15,11 +15,11 @@ prompt.get(prompt_attributes, async (err, result) => {
     return 1;
   }
 
-  if ( result.githubUser.length <= 0 ?? !result.githubUser ) {
+  if (result.githubUser.length <= 0 ?? !result.githubUser) {
     return 1;
   }
 
-await github.getDataFromGithub(result.githubUser)
+  await github.getDataFromGithub(result.githubUser);
 
 });
 

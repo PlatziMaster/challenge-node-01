@@ -2,15 +2,15 @@ const prompt = require('prompt');
 const dotenv = require('dotenv');
 const github = require('./utils/getDataFromGithub.js');
 
-const count = 1;
+dotenv.config();
 
-const prompt_attributes = [
+const promptAttributes = [
   {
     name: 'githubUser',
   },
 ];
 
-prompt.get(prompt_attributes, async (err, result) => {
+prompt.get(promptAttributes, async (err, result) => {
   if (err) {
     return 1;
   }

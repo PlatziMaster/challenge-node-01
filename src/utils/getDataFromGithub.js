@@ -23,7 +23,7 @@ const getDataFromGithub = async (githubUser) => {
     await browser.close();
 
   } catch (error) {
-    console.log(error);
+    throw new Error('oops');
   }
 
 };

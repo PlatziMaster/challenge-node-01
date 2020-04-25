@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const config = require('./config');
 
 exports.postToSlack = async (user, photo, count) => {
   const hook = config.slackUrl();
@@ -25,5 +26,7 @@ exports.postToSlack = async (user, photo, count) => {
       'Content-Type': 'application/json; charset=UTF-8',
     },
     body: data,
-  }).then((response) => {});
+  }).then((response) => {
+    return response;
+  });
 };

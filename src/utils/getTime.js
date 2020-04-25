@@ -1,3 +1,1 @@
-exports.getTime = () => {
-  Math.round(new Date().getTime() / 1000.0);
-};
+exports.getTime = () => Math.round(new Date().getTime() / 1000);

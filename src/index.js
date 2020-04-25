@@ -12,10 +12,11 @@ const promptAttributes = [
 
 prompt.get(promptAttributes, async (err, result) => {
   if (err) {
+    process.stdout.write(`${err} \n`);
     return 1;
   }
 
-  if (result.githubUser.length <= 0 ?? !result.githubUser) {
+  if (result.githubUser.length <= 0 || !result.githubUser) {
     return 1;
   }
 

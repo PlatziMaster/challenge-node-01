@@ -23,4 +23,7 @@ prompt.get(promptAttributes, async (err, result) => {
   console.log("Command-line received data:");
 });
 
+process.on("unhandledRejection", (error) => {
+  console.log("unhandledRejection", error.message);
+});
 prompt.start();

@@ -2,7 +2,7 @@
 const dotenv = require("dotenv");
 const fetch = require("node-fetch");
 
-const config = dotenv.config();
+dotenv.config();
 
 const postToSlack = async (user, photo, count) => {
   const data = JSON.stringify({
@@ -21,7 +21,7 @@ const postToSlack = async (user, photo, count) => {
       },
     ],
   });
-  const webhookURL = `${config.HOOK()}/${config.TOKEN()}`;
+  const webhookURL = `${process.env.HOOK}/${process.env.TOKEN}`;
   await fetch(webhookURL, {
     method: "POST",
     headers: {

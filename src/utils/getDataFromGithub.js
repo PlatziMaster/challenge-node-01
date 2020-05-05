@@ -1,3 +1,4 @@
+/* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable comma-dangle */
 /* eslint-disable no-console */
 const puppeteer = require("puppeteer");
@@ -12,7 +13,9 @@ const getDataFromGithub = async (githubUser) => {
   const githubUrl = "https://github.com/";
 
   await page.goto(`${githubUrl}${githubUser}`);
-  await page.screenshot({ path: `src/images/${getTime()}-${githubUser}.png` });
+  await page.screenshot({
+    path: `./src/images/${getTime()}-${githubUser}.png`,
+  });
 
   const githubCounter = await page.evaluate(
     () => document.getElementsByClassName("Counter")[0].innerText

@@ -21,7 +21,7 @@ const getDataFromGithub = async (githubUser) => {
     () => document.getElementsByClassName("Counter")[0].innerText
   );
   const githubUserPhoto = await page.evaluate(
-    () => document.getElementsByClassName("avatar-before-user-status")[0].src
+    () => document.getElementsByClassName("avatar width-full height-full rounded-2")[0].src
   );
 
   console.log(githubCounter);

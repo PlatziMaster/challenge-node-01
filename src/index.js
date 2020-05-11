@@ -7,7 +7,7 @@ const promptAttributes = [
     required: true,
     description: 'Username de Github',
     type: 'string',
-    message: 'Campo no valido.',
+    message: 'Usuario de Github',
   },
 ];
 

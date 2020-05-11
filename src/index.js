@@ -4,16 +4,21 @@ const getDataFromGithub = require('./utils/getDataFromGithub');
 const promptAttributes = [
   {
     name: 'githubUser',
+    required: true,
+    description: 'Username de Github',
+    type: 'string',
+    message: 'Campo no valido.',
   },
 ];
 
-prompt.get(promptAttributes, (err, result) => {
+prompt.get(promptAttributes, async (err, result) => {
   if (err) {
-    return false;
+    return 1;
   }
-  if (result.githubUser.length > 0) {
-    getDataFromGithub(result.githubUser);
+  if (!result.githubUser) {
+    return 1;
   }
+  await getDataFromGithub(result.githubUser);
 });
 
 prompt.start();

@@ -1,5 +1,5 @@
 const getTime = function () {
-  return Date.now()
+  return Date.now();
 };
 
 module.exports = getTime;

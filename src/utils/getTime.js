@@ -1,5 +1,5 @@
 const getTime = function () {
-  Math.round(new Date().getTime() / 1000);
+  return Date.now()
 };
 
 module.exports = getTime;

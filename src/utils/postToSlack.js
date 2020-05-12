@@ -1,5 +1,7 @@
 const fetch = require('node-fetch');
 
+const webhookURL = `${process.env.HOOK} ${process.env.TOKEN}`;
+
 const postToSlack = async (user, photo, count) => {
   const data = JSON.stringify({
     'blocks': [
@@ -7,7 +9,7 @@ const postToSlack = async (user, photo, count) => {
         'type': 'section',
         'text': {
           'type': 'mrkdwn',
-          'text': `*Reto Cumplido* \n https://github.com/${user} \n Numero de repositorios: ${count.trimStart()}`,
+          'text': `*Reto Cumplido* \n https://github.com/${user} \n Número de repositorios: ${count.trimStart()}`,
         },
         'accessory': {
           'type': 'image',

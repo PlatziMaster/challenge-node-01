@@ -1,17 +1,28 @@
-const prompt = require('prompt')
+/* eslint-disable no-console */
+const prompt = require('prompt');
+const dotenv = require('dotenv');
+const { getDataFromGithub } = require('./utils/getDataFromGithub');
 
-const count = 1
+dotenv.config();
 
-const prompt_attributes = [{
+const PromptAttributes = [{
   name: 'githubUser',
-}]
+}];
 
-prompt.get(prompt_attributes, (err, result) => {
+prompt.get(PromptAttributes, async (err, result) => {
   if (err) {
     console.log(err);
     return 1;
   }
-  console.log('Command-line received data:');
-})
+  console.log('Command-line received data:', result);
+  console.log('   Name:', result.githubUser);
 
-prompt.start()
+  const user = result.githubUser;
+  console.log('  ', user);
+  if (!user) {
+    console.log('Se requiere de algún usuario.');
+  }
+  await getDataFromGithub(user);
+});
+
+prompt.start();

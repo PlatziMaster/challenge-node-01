@@ -1,13 +1,16 @@
-const prompt = require('prompt')
-const { getDataFromGithub } = require("./utils/getDataFromGithub");
+/* eslint-disable no-console */
+/* eslint-disable camelcase */
+const prompt = require('prompt');
+const dotenv = require('dotenv');
+const { getDataFromGithub } = require('./utils/getDataFromGithub');
 
-const count = 1
+dotenv.config();
 
 const prompt_attributes = [{
   name: 'githubUser',
-}]
+}];
 
-prompt.get(prompt_attributes, (err, result) => {
+prompt.get(prompt_attributes, async (err, result) => {
   if (err) {
     console.log(err);
     return 1;
@@ -16,10 +19,11 @@ prompt.get(prompt_attributes, (err, result) => {
   console.log('   Name:', result.githubUser);
 
   const user = result.githubUser;
-  console.log('  ', user)
-    if(user){
-      return getDataFromGithub(user)
-    }
-})
+  console.log('  ', user);
+  if (!user) {
+    console.log('No hay usuario');
+  }
+  await getDataFromGithub(user);
+});
 
-prompt.start()
+prompt.start();

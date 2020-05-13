@@ -1,10 +1,6 @@
-const getDataFromGithub = require("./getDataFromGithub");
-
-const getTime = () => {
+function getTime() {
   const date = new Date();
   return date;
 };
 
-module.exports = {
-  getTime,
-};
+module.exports = getTime;

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const puppeteer = require('puppeteer');
 const postToSlack = require('./postToSlack');
 const getTime = require('./getTime');

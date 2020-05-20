@@ -6,7 +6,8 @@ const githubUrl = 'https://github.com/';
 
 const getDataFromGithub = async (githubUser) => {
 
-  const browser = await puppeteer.launch({ headless: false });
+  //ya que no se lanzaba el navegador se le agrego el parametro { headless: false } a puppeteer.launch()
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   await page.goto(`${githubUrl}${githubUser}`);

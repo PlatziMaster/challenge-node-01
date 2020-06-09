@@ -30,7 +30,7 @@ const postToSlack = async (user, photo, count) => {
     body: data,
   }).then((response) => {
     // eslint-disable-next-line no-console
-    console.info(response.size)
+    console.info(response.size);
   });
 };
 

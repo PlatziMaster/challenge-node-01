@@ -11,15 +11,12 @@ const promptAttributes = [{
 
 prompt.get(promptAttributes, (err, result) => {
   if (err) {
-    // console.log(err);
     return 1;
   }
 
   const user = result.githubUser;
 
   if (!user) return false;
-
-  //console.log('Command-line received data:', user)
 
   getDataFromGithub(user);
 

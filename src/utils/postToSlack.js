@@ -1,13 +1,19 @@
 const fetch = require('node-fetch');
+const dotenv = require('dotenv');
 
-const postToSlack = async (user, photo, count) => {
+dotenv.config();
+
+const { TOKEN, HOOK } = process.env;
+//const postToSlack = async (user, photo, count) => {
+const postToSlack = async (user, photo) => {
+  const webhookURL = `${HOOK}/${TOKEN}`;
   const data = JSON.stringify({
     'blocks': [
       {
         'type': 'section',
         'text': {
           'type': 'mrkdwn',
-          'text': `*Reto Cumplido* \n https://github.com/${user} \n Numero de repositorios: ${count.trimStart()}`,
+          'text': `*Reto Cumplido* \n https://github.com/${user}`,
         },
         'accessory': {
           'type': 'image',
@@ -27,3 +33,5 @@ const postToSlack = async (user, photo, count) => {
     console.log(response.size);
   });
 };
+
+module.exports = postToSlack;

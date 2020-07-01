@@ -6,6 +6,7 @@ dotenv.config();
 const { TOKEN, HOOK } = process.env;
 //const postToSlack = async (user, photo, count) => {
 const postToSlack = async (user, photo) => {
+  //utilizar las variables desde process.env webhookURL
   const webhookURL = `${HOOK}/${TOKEN}`;
   const data = JSON.stringify({
     'blocks': [

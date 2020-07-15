@@ -19,8 +19,6 @@ const getDataFromGithub = async (githubUser) => {
 
   const githubCounter = await page.evaluate(() => document.getElementsByClassName('Counter')[0].innerText);
   const githubUserPhoto = await page.evaluate(() => document.getElementsByClassName('avatar-user')[0].src);
-  console.log(githubCounter);
-  console.log(githubUserPhoto);
   slack(githubUser, githubUserPhoto, githubCounter);
 
   await browser.close();

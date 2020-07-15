@@ -17,9 +17,10 @@ const getDataFromGithub = async (githubUser) => {
   await page.goto(`${githubUrl}${githubUser}`);
   await page.screenshot({ path: `src/images/${todayDate.getTime()}-${githubUser}.png` });
 
-  const githubCounter = await page.evaluate(() => document.getElementsByClassName('Counter').innerText);
-  const githubUserPhoto = await page.evaluate(() => document.getElementsByClassName('avatar-user').src);
-
+  const githubCounter = await page.evaluate(() => document.getElementsByClassName('Counter')[0].innerText);
+  const githubUserPhoto = await page.evaluate(() => document.getElementsByClassName('avatar-user')[0].src);
+  console.log(githubCounter);
+  console.log(githubUserPhoto);
   slack(githubUser, githubUserPhoto, githubCounter);
 
   await browser.close();

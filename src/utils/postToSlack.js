@@ -29,9 +29,13 @@ const postToSlack = async (user, photo, count) => {
     },
     body: data,
   }).then((response) => {
-
+    console.log(user);
+    console.log(photo);
+    console.log(count);
     console.log(response.size);
 
+  }).catch(err =>{
+    console.error(err);
   });
 };
 
